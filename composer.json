@@ -1,6 +1,6 @@
 {
     "name": "dmtq/module-faq",
-    "description": "A simple FAQ module. Insert the FAQ widget into the CMS page.",
+    "description": "A simple FAQ module for Magento2. Insert the FAQ widget into the CMS page.",
     "type": "magento2-module",
     "license": "GPL-3.0",
     "minimum-stability": "dev",

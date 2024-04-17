@@ -1,5 +1,5 @@
 # module-faq
-A simple FAQ module. Insert the FAQ widget into the CMS page.
+A simple FAQ module for Magento2. Insert the FAQ widget into the CMS page.
 
 ## composer install
 ```
