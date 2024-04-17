@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+	<widget id="dmtq_faq_faq" class="DMTQ\FAQ\Block\Widget\FAQ">
+		<label>FAQ</label>
+		<description>FAQ</description>
+	</widget>
+</widgets>

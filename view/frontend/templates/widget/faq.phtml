@@ -1,0 +1,33 @@
+<?php
+/**
+ * @var $block \DMTQ\FAQ\Block\Widget\FAQ
+ */
+?>
+<div class="faq-list">
+<?php foreach ($block->getCategories() as $category):?>
+    <div class="faq-category">
+        <h3 class="faq-category-title"><?= $category->getName();?></h3>
+        <div class="faq-accordion" data-mage-init='{
+            "accordion":{
+                "active": [],
+                "collapsible": true,
+                "openedState": "active",
+                "multipleCollapsible": true,
+                "animate":{ "duration" :500, "easing":"easeOutCubic"}
+            }}'>
+            <?php foreach ($block->getFaqs() as $faq):?>
+                <?php if($faq->getCategoryId() == $category->getId()):?>
+                    <div class="faq-item">
+                        <div data-role="collapsible">
+                            <div data-role="trigger">
+                                <h4><?= $faq->getTitle();?></h4>
+                            </div>
+                        </div>
+                        <div data-role="content"><?= $faq->getContent();?></div>
+                    </div>
+                <?php endif;?>
+            <?php endforeach;?>
+        </div>
+    </div>
+<?php endforeach; ?>
+</div>

@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<preference for="DMTQ\FAQ\Api\CategoryRepositoryInterface" type="DMTQ\FAQ\Model\CategoryRepository"/>
+	<preference for="DMTQ\FAQ\Api\Data\CategoryInterface" type="DMTQ\FAQ\Model\Category"/>
+	<preference for="DMTQ\FAQ\Api\Data\CategorySearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+	<virtualType name="DMTQ\FAQ\Model\ResourceModel\Category\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+		<arguments>
+			<argument name="mainTable" xsi:type="string">dmtq_faq_category</argument>
+			<argument name="resourceModel" xsi:type="string">DMTQ\FAQ\Model\ResourceModel\Category\Collection</argument>
+		</arguments>
+	</virtualType>
+	<type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+		<arguments>
+			<argument name="collections" xsi:type="array">
+				<item name="dmtq_faq_category_listing_data_source" xsi:type="string">DMTQ\FAQ\Model\ResourceModel\Category\Grid\Collection</item>
+				<item name="dmtq_faq_faq_listing_data_source" xsi:type="string">DMTQ\FAQ\Model\ResourceModel\Faq\Grid\Collection</item>
+			</argument>
+		</arguments>
+	</type>
+	<preference for="DMTQ\FAQ\Api\FaqRepositoryInterface" type="DMTQ\FAQ\Model\FaqRepository"/>
+	<preference for="DMTQ\FAQ\Api\Data\FaqInterface" type="DMTQ\FAQ\Model\Faq"/>
+	<preference for="DMTQ\FAQ\Api\Data\FaqSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+	<virtualType name="DMTQ\FAQ\Model\ResourceModel\Faq\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+		<arguments>
+			<argument name="mainTable" xsi:type="string">dmtq_faq_faq</argument>
+			<argument name="resourceModel" xsi:type="string">DMTQ\FAQ\Model\ResourceModel\Faq\Collection</argument>
+		</arguments>
+	</virtualType>
+</config>

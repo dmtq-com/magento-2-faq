@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+	<table name="dmtq_faq_category" resource="default" engine="innodb" comment="dmtq_faq_category Table">
+		<column xsi:type="int" name="category_id" padding="10" unsigned="true" nullable="false" identity="true" comment="Entity Id"/>
+		<constraint xsi:type="primary" referenceId="PRIMARY">
+			<column name="category_id"/>
+		</constraint>
+        <column xsi:type="int" name="is_active" padding="11" unsigned="false" nullable="false" identity="false" default="0" comment="Is Active"/>
+        <column name="name" nullable="false" xsi:type="varchar" length="255" comment="Name"/>
+        <column name="position" nullable="false" xsi:type="int" unsigned="true" identity="false" default="0" comment="Position"/>
+        <index referenceId="DMTQ_FAQ_CATEGORY_POSITION" indexType="btree">
+            <column name="position"/>
+        </index>
+	</table>
+	<table name="dmtq_faq_faq" resource="default" engine="innodb" comment="dmtq_faq_faq Table">
+		<column xsi:type="int" name="faq_id" padding="10" unsigned="true" nullable="false" identity="true" comment="Entity Id"/>
+		<constraint xsi:type="primary" referenceId="PRIMARY">
+			<column name="faq_id"/>
+		</constraint>
+        <column xsi:type="int" name="is_active" padding="11" unsigned="false" nullable="false" identity="false" default="0" comment="Is Active"/>
+        <column name="title" nullable="false" xsi:type="varchar" length="255" comment="Name"/>
+        <column name="category_id" nullable="false" xsi:type="int" padding="10" unsigned="true" identity="false" comment="Category Id"/>
+        <column name="content" nullable="false" xsi:type="text" comment="content"/>
+        <column name="position" nullable="false" xsi:type="int" unsigned="true" identity="false" default="0" comment="Position"/>
+        <constraint xsi:type="foreign" referenceId="DMTQ_FAQ_CATEGORY_ID" table="dmtq_faq_faq" column="category_id" referenceTable="dmtq_faq_category" referenceColumn="category_id" onDelete="CASCADE"/>
+        <index referenceId="DMTQ_FAQ_FAQ_POSITION" indexType="btree">
+            <column name="position"/>
+        </index>
+    </table>
+</schema>

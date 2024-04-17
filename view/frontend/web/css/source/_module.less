@@ -1,0 +1,83 @@
+& when (@media-common = true) {
+    .faq-category {
+        margin-bottom: 30px;
+        h3,h4{
+            font-weight: normal;
+        }
+        .faq-category-title {
+            font-size: 2.6rem;
+            margin-top: 0;
+        }
+
+        .faq-accordion {
+            .faq-item {
+                background-color: #ddd;
+                font-size: 1.6rem;
+                margin-bottom: 15px;
+                h4 {
+                    font-size: 2rem;
+                    padding: 0 20px;
+                    line-height: 60px;
+                    margin: 0;
+                    &:after {
+                        -webkit-font-smoothing: antialiased;
+                        -moz-osx-font-smoothing: grayscale;
+                        font-size: 20px;
+                        line-height: 60px;
+                        color: #686C78;
+                        content: '\e622';
+                        font-family: 'luma-icons';
+                        margin: 0;
+                        vertical-align: middle;
+                        display: inline-block;
+                        font-weight: normal;
+                        overflow: hidden;
+                        speak: none;
+                        text-align: center;
+                        float: right;
+                    }
+                }
+                .active {
+                    h4 {
+                        &:after {
+                            content: '\e608';
+                        }
+                    }
+                }
+                div[data-role="collapsible"] {
+                    cursor: pointer;
+                }
+                div[data-role="content"] {
+                    color: #A7A49D;
+                    padding: 0 20px 20px 20px;
+                }
+            }
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .faq-category {
+        .faq-category-title {
+            font-size: 2rem;
+        }
+        .faq-accordion {
+            .faq-item {
+                font-size: 1.4rem;
+                h4 {
+                    font-size: 1.6rem;
+                    line-height: 50px;
+                    padding: 0 10px;
+                    &:after {
+                        font-size: 1.6rem;
+                        line-height: 50px;
+                    }
+                }
+                div[data-role="content"] {
+                    color: #A7A49D;
+                    padding: 0 10px 10px 10px;
+                }
+            }
+        }
+    }
+}
