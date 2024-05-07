@@ -2,7 +2,7 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
 	<menu>
         <add id="DMTQ_FAQ::dmtq_faq" title="FAQ" module="DMTQ_FAQ" sortOrder="100" resource="Magento_Backend::content" parent="DMTQ_Core:top_level" />
-        <add id="DMTQ_FAQ::dmtq_faq_category" title="Category" module="DMTQ_FAQ" sortOrder="100" resource="Magento_Backend::content" parent="DMTQ_FAQ::dmtq_faq" action="dmtq_faq/category/index"/>
-		<add id="DMTQ_FAQ::dmtq_faq_faq" title="Faq" module="DMTQ_FAQ" sortOrder="100" resource="Magento_Backend::content" parent="DMTQ_FAQ::dmtq_faq" action="dmtq_faq/faq/index"/>
+        <add id="DMTQ_FAQ::dmtq_faq_category" title="FAQ Category" module="DMTQ_FAQ" sortOrder="100" resource="Magento_Backend::content" parent="DMTQ_FAQ::dmtq_faq" action="dmtq_faq/category/index"/>
+		<add id="DMTQ_FAQ::dmtq_faq_faq" title="FAQ Items" module="DMTQ_FAQ" sortOrder="100" resource="Magento_Backend::content" parent="DMTQ_FAQ::dmtq_faq" action="dmtq_faq/faq/index"/>
 	</menu>
 </config>
