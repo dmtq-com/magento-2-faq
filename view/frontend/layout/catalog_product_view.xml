@@ -10,7 +10,7 @@
         <referenceBlock name="product.info.details">
             <block class="DMTQ\FAQ\Block\FAQ" name="product.faq.wrapper" template="DMTQ_FAQ::faq.phtml" group="detailed_info">
                 <arguments>
-                    <argument name="sort_order" xsi:type="string">20</argument>
+                    <argument name="sort_order" xsi:type="string">100</argument>
                 </arguments>
             </block>
         </referenceBlock>
